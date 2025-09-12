@@ -150,3 +150,9 @@
     opacity: 1;
     transform: translateY(0);
 }
+
+
+.lesson img {
+    border-radius: 3rem !important;
+    box-shadow: 0.75rem 0.75rem 3rem hsla(0, 0%, 0%, 0.50) !important;
+}
