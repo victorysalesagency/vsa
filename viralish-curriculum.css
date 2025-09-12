@@ -1,0 +1,156 @@
+<style>
+
+:root {
+    --body-bg: hsl(0, 0%, 100%);
+    --text: hsl(0, 0%, 22%);
+    --title: hsl(0, 0%, 0%);
+    --desc: hsl(0, 0%, 22%);
+    --card-bg: hsl(0, 0%, 96%);
+    --card-border: hsl(0, 0%, 90%);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.curriculum > .inner {
+    grid-row-gap: 4rem !important;
+}
+
+/* Grid Layout */
+.lesson > .inner {
+    display: grid;
+    gap: 4rem;
+    align-items: center;
+}
+
+@media (min-width: 768px) {
+    .lesson > .inner {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+
+    .reverse .copy {
+        order: 2;
+    }
+
+    .reverse .image {
+        order: 1;
+    }
+}
+
+/* Content */
+.lesson .headline {
+    margin: 0 0 1rem 0;
+    font-size: 1.375rem;
+    font-weight: 400;
+    line-height: 1.25em;
+    color: var(--title);
+}
+
+@media (min-width: 768px) {
+    .lesson .headline {
+        font-size: 1.75rem;
+        font-weight: 600;
+        line-height: 1.2em;
+    }
+}
+
+.lesson .description {
+    margin: 0;
+    color: var(--desc);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.25em;
+}
+
+@media (min-width: 768px) {
+    .lesson .description {
+        font-size: 1.125rem;
+        font-weight: 400;
+        line-height: 1.5rem;
+    }
+}
+
+/* Visual */
+.lesson .image.fade-up {
+    position: relative;
+    max-width: 18.75rem;
+    margin: 2.5rem auto 0;
+}
+
+@media (min-width: 768px) {
+    .lesson .image.fade-up {
+        max-width: 25rem;
+        margin: 0;
+    }
+}
+
+.lesson .image > .inner {
+    position: relative;
+    width: 100%;
+    height: 20rem;
+    background: var(--card-bg);
+    border-radius: 2rem;
+    z-index: 1;
+    border: 0.125rem solid var(--card-border);
+    display: block;
+}
+
+@media (min-width: 768px) {
+    .lesson .image > .inner {
+        height: 25rem;
+    }
+}
+
+/* Center the contents of the image container */
+.image.fade-up .vertical.inner {
+    display: flex;
+    justify-content: center;
+ /* horizontal center */
+    align-items: center;
+     /* vertical center */
+    height: 100%;
+}
+
+.image.fade-up .c-image,
+.image.fade-up .image-container,
+.image.fade-up .hl-image-picture {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.image.fade-up .image-container img,
+.image.fade-up .hl-image-picture img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Animations */
+.fade-up {
+    opacity: 0;
+    transform: translateY(3rem);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(3.75rem);
+    transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+</style>
